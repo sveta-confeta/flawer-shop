@@ -1,0 +1,39 @@
+
+.video {
+  margin-bottom: 64px;
+  @media(max-width: $tablet) {
+    margin-bottom: 48px;
+  }
+  @media(min-width: $laptop) {
+    margin-bottom: size-decstop(64);
+  }
+  &__title {
+    margin-bottom: 32px;
+    display: block;
+    font-size: 32px;
+    font-weight: 700;
+    line-height: 38px;
+   color: var(--title);
+    @media(max-width: $tablet) {
+      font-size: 26px;
+      line-height: 31px;
+      margin-bottom: 24px;
+    }
+    @media(min-width: $laptop) {
+      margin-bottom: size-decstop(32);
+      font-size:size-decstop(32);
+      line-height: size-decstop(38);
+
+    }
+  }
+  iframe {
+    width: 100%;
+    height: auto;
+    aspect-ratio: 16/9;
+    border-radius: 24px;
+    @media(min-width: $laptop) {
+      border-radius: size-decstop(24);
+
+    }
+  }
+}

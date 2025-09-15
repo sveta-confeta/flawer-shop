@@ -1,0 +1,20 @@
+.text {
+  width: 100%;
+  font-size: 20px;
+  font-weight: 400;
+  line-height: 28px;
+  color: var(--header-menu-text);
+  margin-bottom: 32px;
+  display: block;
+  @media(max-width: $tablet) {
+    font-size: 18px;
+    line-height: 25px;
+    margin-bottom: 24px;
+  }
+  @media(min-width: $laptop) {
+    margin-bottom: size-decstop(32);
+    font-size: size-decstop(20);
+    line-height: size-decstop(28);
+  }
+
+}

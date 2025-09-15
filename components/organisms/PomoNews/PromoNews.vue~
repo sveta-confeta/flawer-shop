@@ -1,0 +1,25 @@
+<template>
+  <div class="promo-news container-middle">
+    <time class="promo-news__time" datetime="2024-02-03">03.02.2024</time>
+    <h1 class="promo-news__title" >{{ newsData?.title}}</h1>
+    <span class="promo-news__text">#FlawersShop #FlawerBusiness</span>
+    <div class="news-picture">
+      <img :src="newsData?.src" :alt="newsData?.alt" />
+    </div>
+  </div>
+</template>
+
+<script setup>
+
+const props = defineProps({
+  newsData: {
+    type: Object,
+    required: true,
+  }
+})
+
+</script>
+
+<style>
+@import "PromoNews.scss";
+</style> 

@@ -1,0 +1,78 @@
+
+<template>
+  <div class="case-cards container" id="flowers">
+    <app-title :title="t('caseCards.title','Popular flowers')" :text="t('caseCards.subtitle')"/>
+    <div class="case-cards__wrap">
+      <case-card :cards="cardsData" card-class="my-custom" />
+    </div>
+
+    <!-- Анимируем через transition с mode="out-in" -->
+    <transition name="fade-slide" mode="out-in">
+      <div v-if="show" class="case-cards__wrap case-cards__list--add">
+        <CaseCard :cards="cardsHidden" />
+      </div>
+    </transition>
+
+    <!-- Одна кнопка с динамическим текстом -->
+    <button class="case-cards__btn" @click="toggleShow">
+      {{ show ? t('caseCards.hide') : t('caseCards.showMore') }}
+    </button>
+  </div>
+</template>
+
+<script setup lang="ts">
+
+import CaseCard from "../../molecules/CaseCard/CaseCard.vue";
+import AppTitle from "../../molecules/AppTitle/AppTitle.vue";
+import {useCaseCardsStore} from './../../../stores/caseCards';
+import {computed, ref} from "vue";
+const { t } = useI18n();
+const store = useCaseCardsStore()
+
+const show = ref(false);
+
+const toggleShow = () => {
+  show.value = !show.value;
+};
+
+const cardsData = computed(() => store.cards || [] )
+const cardsHidden = computed(() =>  store.cardsHidden  || [])
+
+</script>
+
+<style>
+@import "CaseCards.scss";
+
+/* CaseCards.scss */
+.case-cards {
+  position: relative; /* Чтобы анимация не ломала поток */
+
+  &__list {
+    overflow: hidden; /* Важно для анимации height */
+    transition: all 0.4s ease;
+  }
+}
+
+/* Анимация появления/скрытия */
+.fade-slide-enter-active,
+.fade-slide-leave-active {
+  transition:
+      opacity 0.3s ease,
+      transform 0.3s ease,
+      height 0.3s ease;
+}
+
+.fade-slide-enter-from,
+.fade-slide-leave-to {
+  opacity: 0;
+  transform: translateY(-10px);
+  height: 0 !important; /* Плавно схлопываем */
+}
+
+.fade-slide-enter-to,
+.fade-slide-leave-from {
+  opacity: 1;
+  transform: translateY(0);
+  height: auto;
+}
+</style>

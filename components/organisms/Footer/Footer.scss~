@@ -1,0 +1,208 @@
+
+.footer {
+  padding-top: 96px;
+  background: var(--footer-bg);
+  width: 100%;
+  @media(max-width: $tablet-landscape) {
+    padding-top: 64px;
+  }
+  @media(min-width: $laptop) {
+    padding-top:size-decstop(94);
+  }
+
+  &__wrap {
+    display: grid;
+    grid-template-areas:
+   "content  form"
+   "contact  form";
+    grid-template-columns: 798px 475px;
+    margin-bottom: 96px;
+    @media (max-width: $laptop) {
+      grid-template-columns: 7fr 5fr;
+      column-gap: 30px;
+    }
+    @media(max-width: 1100px) {
+      display: grid;
+      grid-template-columns: 1fr;
+      margin-bottom: 72px;
+      grid-template-areas:
+       "content"
+        "form"
+       "contact";
+    }
+    @media(min-width: $laptop) {
+      margin-bottom:size-decstop(96);
+      grid-template-columns: size-decstop(798) size-decstop(475);
+    }
+
+    .footer-content {
+      grid-area: content;
+      margin-bottom: 56px;
+      margin-right: 122px;
+      @media (max-width: $tablet-landscape) {
+        margin-bottom: 0;
+      }
+      @media (max-width: $laptop) {
+       margin-right: 0;
+      }
+      @media(min-width: $laptop) {
+        margin-bottom: size-decstop(56);
+        margin-right:size-decstop(122);
+      }
+
+      &__headline {
+        font-size: 64px;
+        font-weight: 700;
+        line-height: 77px;
+        color: var(--title);
+        @media(max-width:$tablet-landscape) {
+          font-size: 40px;
+          line-height: 48px;
+        }
+        @media(min-width: $laptop) {
+          font-size:size-decstop(64);
+          line-height:size-decstop(77);
+        }
+      }
+
+      &__description {
+        font-size: 64px;
+        font-weight: 700;
+        line-height: 77px;
+        color: var(--text);
+        @media(max-width: $tablet-landscape) {
+          font-size: 40px;
+          line-height: 48px;
+          margin-bottom: 56px;
+        }
+        @media(min-width: $laptop) {
+          font-size:size-decstop(64);
+          line-height:size-decstop(77);
+        }
+      }
+    }
+
+    .footer-contact {
+      grid-area: contact;
+      margin-top: 43px;
+      @media(min-width: $tablet) {
+        margin-top: 0;
+      }
+
+      &__number {
+        font-size: 40px;
+        font-weight: 400;
+        line-height: 48px;
+        color: var(--title);
+        margin-bottom: 13px;
+        display: block;
+        @media(min-width: $laptop) {
+          font-size:size-decstop(40);
+          line-height:size-decstop(48);
+          margin-bottom:size-decstop(13);
+        }
+      }
+
+      &__mail {
+        font-size: 40px;
+        font-weight: 400;
+        line-height: 48px;
+        margin-bottom: 13px;
+        color: var(--title);
+        display: block;
+        @media(max-width: $tablet-landscape) {
+          font-size: 24px;
+          line-height: 29px;
+        }
+        @media(min-width: $laptop) {
+          font-size:size-decstop(40);
+          line-height:size-decstop(48);
+          margin-bottom:size-decstop(13);
+        }
+      }
+
+      &__address {
+        font-size: 24px;
+        font-weight: 400;
+        line-height: 29px;
+        color: var(--text);
+        display: block;
+        @media(min-width: $laptop) {
+          font-size:size-decstop(24);
+          line-height:size-decstop(29);
+        }
+      }
+    }
+
+    .footer-form {
+      grid-area: form;
+      margin-left: 9px;
+      height: 508px;
+      @media(max-width: $tablet){
+        height: auto;
+        min-width:100%;
+      }
+      @media(max-width: $laptop) {
+        margin-left: 0;
+
+      }
+      @media(min-width: $laptop) {
+        height: size-decstop(508);
+        margin-left:size-decstop(9);
+
+      }
+      form {
+        height: 100%;
+      }
+    }
+
+  }
+
+  &-soc {
+    display: flex;
+    align-items: center;
+    gap: 24px;
+    margin-bottom: 50px;
+    @media(min-width: $laptop) {
+      gap: size-decstop(24);
+      margin-bottom: size-decstop(50);
+    }
+  }
+
+  &-logo {
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    margin-bottom: 74px;
+    @media(max-width: $tablet) {
+      margin-bottom: 64px;
+    }
+    @media(min-width: $laptop) {
+      margin-bottom: size-decstop(74);
+    }
+
+
+    &__decst {
+      @media(max-width: $tablet) {
+        display: none;
+      }
+    }
+
+    &__mob {
+      display: none;
+      @media(max-width: $tablet) {
+        display: block;
+      }
+    }
+
+    img {
+      width: 1881px;
+      max-width: 1881px !important;
+      @media(min-width: $laptop) {
+        width:size-decstop(1881);
+        max-width: size-decstop(1881) !important;
+      }
+    }
+  }
+
+}

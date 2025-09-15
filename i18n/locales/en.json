@@ -1,0 +1,190 @@
+{
+  "header": {
+    "back": "Back to the main",
+    "cta": "Get free consultation",
+    "logo": "Flower Shop"
+  },
+  "menu": {
+    "ease": "Ease of starting",
+    "why": "Disadvantages",
+    "flowers": "Popular flowers",
+    "news": "News business",
+    "contact": "Contacts"
+  },
+  "ease": {
+    "title": "Ease of starting a business",
+    "cardsData": {
+      "area1": {
+        "value": "80%",
+        "label": "Repeat customers"
+      },
+      "area2": {
+        "value": "30%",
+        "label": "Annual growth in online flower sales"
+      },
+      "area3": {
+        "value": "5-7x",
+        "label": "ROI within the first 2 years"
+      },
+      "area4": {
+        "value": "90%",
+        "label": "Holiday orders (e.g., Valentine's Day, Women's Day)"
+      }
+    }
+  },
+  "promo": {
+    "experts": "Professional experts",
+    "title": "Advantages of the Flower business"
+  },
+  "disadvantages": {
+    "title": "Disadvantages of the Flower Business",
+    "subtitle": "But you should stay optimistic",
+    "cards": {
+      "card1": {
+        "title": "High perishability of products",
+        "text": "Demand and supply vary greatly throughout the year."
+      },
+      "card2": {
+        "title": "Seasonal fluctuations",
+        "text": "We have our unique system for release planning, development and deployment."
+      },
+      "card3 ": {
+        "title": "Dependence on weather conditions",
+        "text": "Poor weather can ruin entire crops and delay deliveries."
+      },
+      "card4": {
+        "title": "High competition",
+        "text": "Many flower shops and online sellers make it hard to stand out."
+      },
+      "card5": {
+        "title": "Logistical challenges",
+        "text": "Fast and careful delivery is required to keep flowers fresh."
+      }
+    }
+  },
+  "caseCards": {
+    "title": "Popular Flowers",
+    "subtitle": "Guaranteed success",
+    "showMore": "Show more",
+    "hide": "Hide",
+    "cards": {
+      "card1": {
+        "alt": "rose",
+        "title": "The queen of flowers is the rose",
+        "tags": "#FlowerShop #Rose",
+        "id": "1"
+      },
+      "card2": {
+        "alt": "orchids",
+        "title": "Elegant orchids",
+        "tags": "#FlowerShop #Orchids",
+        "id": "2"
+      },
+      "card3": {
+        "alt": "Beautiful tulip",
+        "title": "Beautiful tulip",
+        "tags": "#FlowerShop #Tulip",
+        "id": "3"
+      },
+      "card4": {
+        "alt": "irises",
+        "title": "Delicate irises",
+        "tags": "#FlowerShop #Irises",
+        "id": "4"
+      },
+      "card5": {
+        "alt": "gladioluses",
+        "title": "Majestic gladioluses",
+        "tags": "#FlowerShop #Gladioluses",
+        "id": "5"
+      },
+      "card6": {
+        "alt": "peony",
+        "title": "The scent of a peony carries the fragrance of a thousand roses.",
+        "tags": "#FlowerShop #Peony",
+        "id": "6"
+      }
+    },
+    "cardsHidden": {
+      "card7": {
+        "alt": "lilies",
+        "title": "The most sought-after flowers are lilies",
+        "tags": "#FlowerShop #Lilies",
+        "id": "7"
+      },
+      "card8": {
+        "alt": "gerberas",
+        "title": "Sun-faced flowers of success and happiness – gerberas",
+        "tags": "#FlowerShop #Gerberas",
+        "id": "8"
+      }
+    }
+  },
+  "newsCards": {
+    "title": "Floral Business News",
+    "subtitle": "Fresh trends, blooming opportunities",
+    "cards": {
+      "card1": {
+        "id": "1",
+        "title": "Demand for Eco-Friendly Bouquets Grows by 40%: Customers Embrace Sustainable Trends",
+        "text": "In 2024, buyers have been increasingly ordering dried flower arrangements and locally sourced seasonal blooms. Florists note that eco-friendly packaging and plastic-free solutions boost customer loyalty."
+      },
+      "card2": {
+        "id": "2",
+        "title": "Flower Shops Adopt AI: Chatbots Increase Conversion by 25%",
+        "text": "Neural networks now help customers choose bouquets based on photos, send reminders for important dates, and handle up to 60% of orders without manager involvement. Pilot projects have already launched in Moscow and St. Petersburg."
+      },
+      "card3": {
+        "id": "3",
+        "title": "One-Hour Flower Delivery Becomes the New Industry Standard",
+        "text": "Flower delivery services are introducing ultra-fast shipping thanks to optimized logistics and micro-warehouses within city limits. Market leaders predict that by 2025, this service will be available even in smaller towns."
+      }
+    }
+  },
+  "footer": {
+    "headline": "Make better a reality",
+    "description": "Maximizes business performance",
+    "addressLabel": "Address:",
+    "addressValue": "Minsk, Aladovyh, 5-89"
+  },
+  "promoNews": {
+    "date": "Nov 7, 2024",
+    "title": "All eyes on you: Introducing the Off-Grid Spotlight",
+    "tags": "#Deployment #Optimization #Migration #Support"
+  },
+  "success": {
+    "title": "Thank you!\nYour message is submitted.",
+    "ok": "OK"
+  },
+  "error": {
+    "titleError": "Unfortunately your message is not submitted.",
+    "titleCallPrefix": "Please try again or call us to",
+    "ok": "OK"
+  },
+  "form": {
+    "submit": "Submit",
+    "email": {
+      "label": "Email address",
+      "placeholder": "Enter your email",
+      "required":  "Email is required",
+      "error": "Email not correct"
+    },
+    "name": {
+      "label": "Name",
+      "placeholder": "Name",
+      "error": "Name is required"
+    },
+    "message": {
+      "label": "Message",
+      "placeholder": "Message",
+      "error": "Message is required"
+    }
+  },
+  "modal": {
+    "title": "Get a consultation",
+    "description": "Our goal is to make collaboration as efficient as possible. After you fill out this form, we will provide you with a quote within 48 hours."
+  }
+}
+
+
+

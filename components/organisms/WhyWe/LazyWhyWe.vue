@@ -1,0 +1,33 @@
+<template>
+  <div class="why-we" id="whyWe">
+    <app-title :title="te('disadvantages.title') ? t('disadvantages.title') : 'Disadvantages of the Flower Business'" :text="t('disadvantages.subtitle')"/>
+    <ul class="why-we__list container">
+      <li v-for="(card,ind) in cards" :key="ind" class="why-we__card">
+        <img src="/images/icons/decor/dot.png" alt="decoration dot" width="35" height="35">
+        <div>
+          <span class="why-we__card-title">{{ card.title }}</span>
+          <span class="why-we__card-text">{{ card.text }}</span>
+        </div>
+      </li>
+    </ul>
+  </div>
+</template>
+
+<script setup>
+import AppTitle from "../../molecules/AppTitle/AppTitle.vue";
+import { useI18n } from '#imports';
+import {computed} from "vue";
+const { t, te, locale, setLocale } = useI18n();
+
+const cards = computed(() => [
+  {title: t('disadvantages.cards.card1.title'), text: t('disadvantages.cards.card1.text')},
+  {title: t('disadvantages.cards.card2.title'), text: t('disadvantages.cards.card2.text')},
+  {title: t('disadvantages.cards.card3.title'), text: t('disadvantages.cards.card3.text')},
+  {title: t('disadvantages.cards.card4.title'), text: t('disadvantages.cards.card4.text')},
+  {title: t('disadvantages.cards.card5.title'), text: t('disadvantages.cards.card5.text')},
+]);
+</script>
+
+<style scoped>
+@import "WhyWe.scss";
+</style>

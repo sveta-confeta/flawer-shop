@@ -1,0 +1,95 @@
+
+.challenges-results {
+  padding: 72px;
+  background: var(--bg-case-card);
+  border-radius: 72px;
+  display: flex;
+  gap: 72px;
+  width: 100%;
+  grid-column-start: 2;
+  grid-column-end: 3;
+  @media(min-width: $laptop) {
+    padding:size-decstop(72);
+    border-radius:size-decstop(72);
+    gap: size-decstop(72);
+  }
+  @media(max-width: $tablet-landscape) {
+    padding: 50px;
+    gap: 50px;
+  }
+  @media(max-width: $tablet) {
+    padding: 32px 12px;
+    flex-direction: column;
+    grid-column-start: 1;
+    grid-column-end: 2;
+    border-radius: 16px;
+    gap: 32px;
+  }
+  &__title {
+    font-weight: 700;
+    font-size: 28px;
+    line-height: 34px;
+    margin-bottom: 14px;
+    color: var(--title);
+    display: block;
+    @media(max-width: $tablet) {
+      font-size: 22px;
+      line-height: 27px;
+    }
+    @media(min-width: $laptop) {
+      font-size: size-decstop(28);
+      line-height: size-decstop(34);
+      margin-bottom: size-decstop(14);
+    }
+  }
+  &__list {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+    @media(min-width: $laptop) {
+      gap: size-decstop(2);
+    }
+
+    &-item {
+      background: var(--bg-elements);
+      padding: 8px 10px;
+      color:var(--title);
+      font-size: 20px;
+      line-height: 24px;
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+      border-radius:20px;
+      @media(max-width: $tablet) {
+        font-size: 18px;
+        line-height: 22px;
+      }
+      @media(min-width: $laptop) {
+        font-size: size-decstop(20);
+        line-height:size-decstop(24);
+        padding-top:size-decstop(8);
+        padding-bottom:size-decstop(8);
+        padding-left:size-decstop(10);
+        padding-right:size-decstop(10);
+        gap:size-decstop(10);
+        border-radius: size-decstop(20);
+      }
+      &-el {
+        min-width: 20px;
+        height: 20px;
+        border-radius: 50%;
+        opacity: 0.6;
+        @media(min-width: $laptop) {
+          min-width:size-decstop(20);
+          height: size-decstop(20);
+        }
+        &--brown {
+          background: var(--bg-round-brown);
+        }
+        &--blue {
+          background:  var( --primary);;
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,111 @@
+<template>
+  <div class="stats-item">
+    <img :src="img"
+         :alt="value"
+         class="stats-img"
+    />
+    <div class="gradient-overlay"></div>
+    <div class="curtain"></div>
+    <div class="stat-value">{{ value }}</div>
+    <div v-html="label" class="stat-label"></div>
+  </div>
+</template>
+
+<script setup>
+const props = defineProps({
+  value: {
+    type: String,
+    required: true,
+  },
+  label: {
+    type: String,
+    required: true,
+  },
+  img:{
+    type: String,
+    required: true,
+  },
+});
+</script>
+
+<style scoped lang="scss">
+
+.stats-item {
+  position: relative;
+  width: 240px;
+  min-width: 240px;
+  height: 240px;
+  padding: 20px;
+  background:var(--gray-900);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  border: var(--border-card);
+  @media(min-width: $laptop) {
+    width: size-decstop(296);
+    min-width: size-decstop(296);
+    height: size-decstop(280);
+    padding: size-decstop(18) size-decstop(24) size-decstop(24);
+  }
+}
+.stats-img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: 1;
+}
+.gradient-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, rgba(0, 0, 0, 0) 40%, rgba(0, 0, 0, 0.9) 100%);
+  z-index: 2;
+  pointer-events: none;
+}
+
+.curtain {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: var(--bg-elements);
+  z-index: 2;
+  transition: height 0.4s ease, top 0.4s ease;
+}
+
+.stats-item:hover .curtain {
+  height: 0;
+  top: 100%;
+}
+.stat-value {
+  font-size: 34px;
+  line-height: 34px;
+  font-weight: 400;
+  color: white;
+  @media(min-width: $laptop) {
+    font-size: size-decstop(64);
+    line-height: size-decstop(64);
+  }
+}
+
+
+.stat-label {
+  font-style: normal;
+  font-weight: 400;
+  font-size: 19px;
+  line-height: 130%;
+  color: white;
+  opacity: 0.5;
+  @media(min-width: $laptop) {
+    font-size: size-decstop(19);
+  }
+}
+.stat-value,
+.stat-label {
+  position: relative;
+  z-index: 3;
+}
+</style>
+

@@ -1,0 +1,35 @@
+<template>
+  <div class="promo-case">
+    <nuxt-picture :src="caseData.src"
+                  :alt="caseData.alt"
+                  formats="webp"
+                  class="promo-case-picture"
+    />
+    <div class="promo-case__add">
+      <div class="promo-case__add-wrap">
+        <h1 class="promo-case__add-title">{{ caseData.title }}</h1>
+        <time class="promo-case__add-time" :datetime="caseData.date">{{ formatDate(caseData.date) }}</time>
+      </div>
+      <div class="promo-case__add-content">
+        <span class="promo-case__add-tags">{{ caseData.tags }}</span>
+      </div>
+    </div>
+  </div>
+</template>
+
+<script setup>
+const props = defineProps({
+  caseData: {
+    type: Object,
+    required: true,
+  }
+})
+
+const formatDate = (dateString) => {
+  return new Date(dateString).toLocaleDateString('en-US', { year: 'numeric', month: 'short', day: 'numeric' })
+}
+</script>
+
+<style>
+@import "PromoCase.scss";
+</style>

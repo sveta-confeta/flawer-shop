@@ -1,0 +1,66 @@
+
+.quote {
+  padding: 24px;
+  background: var(--bg-card);
+  border-radius: 20px;
+  display: flex;
+  margin-bottom: 32px;
+  width: 100%;
+  gap: 24px;
+  @media(max-width: $tablet) {
+    padding: 32px 12px;
+    border-radius: 16px;
+  }
+  @media(min-width: $laptop) {
+    padding:size-decstop(24);
+    border-radius: size-decstop(20);
+    margin-bottom:size-decstop(32);
+    gap:size-decstop(24);
+  }
+  &__wrap-icon{
+    min-width: 60px;
+    @media(min-width: $laptop) {
+      min-width: size-decstop(47);
+      height:size-decstop(32);
+    }
+    @media(max-width: $tablet) {
+      min-width: 34px;
+      height: 22px;
+    }
+  }
+  &__wrap-content {
+    display: flex;
+    flex-direction: column;
+  }
+  &__title {
+    font-size: 20px;
+    font-weight: 500;
+    line-height: 28px;
+    color: var(--title);
+    margin-bottom: 16px;
+    @media(max-width: $tablet) {
+      font-size: 18px;
+      line-height: 25px;
+    }
+    @media(min-width: $laptop) {
+      font-size:size-decstop(20);
+      line-height:size-decstop(28);
+      margin-bottom:size-decstop(16);
+    }
+  }
+
+  &__text {
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 19px;
+    color: var(--header-menu-text);
+    @media(max-width: $tablet) {
+      font-size: 14px;
+      line-height: 17px;
+    }
+    @media(min-width: $laptop) {
+      font-size:size-decstop(16);
+      line-height:size-decstop(19);
+    }
+  }
+}

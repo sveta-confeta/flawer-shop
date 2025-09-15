@@ -1,0 +1,138 @@
+<template>
+  <header class="header">
+    <div class="header__wrap">
+      <nuxt-link to="/" class="header__logo" v-show="logoVisible">
+        {{ t('header.logo', "Flower Shop") }}
+      </nuxt-link>
+      <div v-if="$route.path !== '/'">
+        <app-button
+            :text="t('header.back')"
+            @click="goToHomePage"
+            :classBtn="homeBtn"
+            theme="transparent"
+            icon
+        />
+      </div>
+      <nav v-else class="header-nav">
+        <ul class="header-nav__list">
+          <li class="header-nav__item" v-for="(item, ind) in menu" :key="ind">
+            <a @click="scrollToComponent(item.path)">{{ item.name }}</a>
+          </li>
+        </ul>
+      </nav>
+      <app-button
+          :text="t('header.cta')"
+          @click="openModalHandler"
+          :classBtn="headerBtn"
+      />
+      <div class="lang-switcher">
+        <button type="button" :class="{active: locale==='en'}" @click="changeLocale('en')">EN</button>
+        <button type="button" :class="{active: locale==='ru'}" @click="changeLocale('ru')">RU</button>
+      </div>
+      <button class="menu-icon-wrap" type="button" @click="mobileMenu">
+        <span class="menu-icon" :class="{'active':isMobileMenu}"></span>
+      </button>
+    </div>
+  </header>
+  <app-modal v-model:show="showModal"/>
+</template>
+
+<script setup>
+import { computed, ref, onMounted, onUnmounted } from "vue";
+import { useRoute, useRouter } from "vue-router";
+import AppModal from "../AppModal/AppModal.vue";
+import AppButton from "../../atoms/AppButton/AppButton.vue";
+
+const { t, te, locale, setLocale } = useI18n();
+const route = useRoute();
+const router = useRouter();
+
+const headerBtn = 'header-btn';
+const homeBtn = 'header__btn-go-home';
+let logoVisible = ref(true);
+
+const updateLogoVisibility = () => {
+  const windowWidth = window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth;
+  const isHomePage = route.path === "/";
+  logoVisible.value = !(windowWidth < 1129 && !isHomePage);
+};
+
+onMounted(() => {
+  updateLogoVisibility();
+  window.addEventListener('resize', updateLogoVisibility);
+});
+
+onUnmounted(() => {
+  window.removeEventListener('resize', updateLogoVisibility);
+});
+
+// Watch for route changes
+watch(() => route.path, () => {
+  updateLogoVisibility();
+});
+
+const props = defineProps({
+  isMobileMenu: {
+    type: Boolean,
+  }
+});
+
+let showModal = ref(false);
+
+const openModalHandler = () => {
+  showModal.value = true;
+}
+
+const goToHomePage = () => {
+  router.push('/');
+}
+
+const emit = defineEmits(['toggleMobileMenu']);
+
+const mobileMenu = () => {
+  emit('toggleMobileMenu');
+}
+
+const menu = computed(() => {
+  return ([
+    {
+      name: t('menu.ease'),
+      path: "#actionCards"
+    },
+    {
+      name: t('menu.why'),
+      path: "#whyWe"
+    },
+    {
+      name: t('menu.flowers'),
+      path: "#flowers"
+    },
+    {
+      name: t('menu.news'),
+      path: "#news"
+    },
+    {
+      name: t('menu.contact'),
+      path: "#footer"
+    },
+  ]);
+});
+
+const scrollToComponent = (path) => {
+  const element = document.querySelector(path);
+  if (element) {
+    element.scrollIntoView({behavior: 'smooth'});
+  }
+};
+
+const changeLocale = async (lng) => {
+  await setLocale(lng);
+  if (process.client) {
+    document.documentElement.setAttribute('lang', lng);
+  }
+};
+</script>
+
+<style scoped lang="scss">
+@import 'Header.scss';
+</style>

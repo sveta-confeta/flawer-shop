@@ -1,0 +1,20 @@
+<template>
+  <div class="important">
+    <svg fill="var(--primary)"  id="Capa_1"  viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg"><g><path d="m256 422c-24.853 0-45 20.147-45 45s20.147 45 45 45 45-20.147 45-45-20.147-45-45-45z"></path><path d="m256 0c-24.853 0-45 20.147-45 45v299c0 24.853 20.147 45 45 45s45-20.147 45-45v-299c0-24.853-20.147-45-45-45z"></path></g></svg>
+    <span class="important__text">{{text}} </span>
+  </div>
+</template>
+
+<script setup>
+const props = defineProps({
+  text: {
+    type: String,
+    required:true
+  }
+
+});
+</script>
+
+<style scoped>
+@import "ImportantText.scss";
+</style>

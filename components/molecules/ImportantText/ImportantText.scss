@@ -1,0 +1,46 @@
+
+.important {
+  padding: 38px 24px 38px 46px;
+  background: var(--bg-card);
+  position: relative;
+  border-radius: 20px;
+  display: flex;
+  margin-bottom: 32px;
+  align-items: center;
+  width: 100%;
+  gap: 40px;
+  @media(max-width: $tablet) {
+    padding: 20px 16px 20px 32px;
+  }
+  @media(min-width: $laptop) {
+    padding-top:size-decstop(38);
+    padding-bottom:size-decstop(38);
+    padding-left:size-decstop(46);
+    padding-right:size-decstop(24);
+    border-radius:size-decstop(20);
+    margin-bottom:size-decstop(32);
+    gap: size-decstop(40);
+  }
+  svg {
+    width: 59px;
+    height: 54px;
+    @media(min-width: $laptop) {
+      width: size-decstop(50);
+      height:size-decstop(54);
+    }
+  }
+  &__text {
+    font-size: 20px;
+    font-weight: 500;
+    line-height: 28px;
+    color: var(--title);
+    @media(max-width: $tablet) {
+      font-size: 18px;
+      line-height: 25px;
+    }
+    @media(min-width: $laptop) {
+      font-size:size-decstop(20);
+      line-height:size-decstop(28);
+    }
+  }
+}

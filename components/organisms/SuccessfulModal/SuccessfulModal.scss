@@ -1,0 +1,95 @@
+
+.modal {
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  background: rgba(0, 0, 0, 0.5);
+  position: fixed;
+  display: flex;
+  z-index: 4;
+
+  &__content {
+    background: var(--bg-modal);
+    min-height: 300px;
+    width: 550px;
+    padding: 40px;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    border-radius: 40px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    gap: 30px;
+    @media (max-width: $tablet) {
+      padding: 32px 12px;
+      margin: 0;
+      width: 100%;
+      height: 100%;
+      border-radius: 0;
+      gap: 72px;
+      justify-content: initial;
+    }
+    @media(min-width: 2000px) {
+      min-height: size-modal(300);
+      width: size-modal(550);
+      padding-top:size-modal(40);
+      padding-bottom:size-modal(40);
+      padding-left:size-modal(40);
+      padding-right:size-modal(40);
+      gap:size-modal(30)
+    }
+    &-btn {
+      background: transparent;
+      border-radius: 15px;
+      border: 1px solid #fff;
+      font-size: 18px;
+      font-weight: 500;
+      line-height: 22px;
+      color: var(--title);
+      padding: 10px 20px;
+      cursor: pointer;
+      @media (max-width: $tablet) {
+
+      }
+      @media(min-width: 2000px) {
+        border-radius: size-modal(15);
+        font-size:size-modal(18);
+        line-height: size-modal(22);
+        padding-top:size-modal(10);
+        padding-bottom:size-modal(10);
+        padding-left:size-modal(20);
+        padding-right:size-modal(20);
+
+      }
+    }
+    &-icon {
+      width: 120px;
+      @media(min-width: 2000px) {
+        width: size-modal(120);
+
+
+      }
+    }
+
+    &-title {
+      font-size: 30px;
+      font-weight: 500;
+      line-height: 40px;
+      color: var(--title);
+      display: block;
+      text-align: center;
+      @media (max-width: $tablet) {
+        font-size: 25px;
+        line-height: 30px;
+      }
+      @media(min-width: 2000px) {
+        font-size:size-modal(30);
+        line-height: size-modal(40);
+      }
+    }
+  }
+}

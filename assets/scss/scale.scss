@@ -1,0 +1,19 @@
+@function  size($size-in-px) {
+  @return $size-in-px / 16px * 1rem;
+}
+
+@function size-decstop($size-in-px) {
+  @return calc(#{$size-in-px} / 1440 * 100vw);
+}
+
+@function size-modal($size-in-px) {
+  @return calc(#{$size-in-px} / 2000 * 100vw);
+}
+
+@function size-logo-mob($size-in-px) {
+  @return calc(#{$size-in-px} / 360 * 100vw);
+}
+
+@function size-cards($size-in-px) {
+  @return calc(#{$size-in-px} / 1023 * 100vw);
+}

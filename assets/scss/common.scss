@@ -1,0 +1,150 @@
+
+*,
+*:before,
+*:after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html,
+body {
+  height: 100%;
+}
+
+body {
+  font-family: 'CAT', sans-serif;
+  display: flex;
+  flex-direction: column;
+  margin: 0;
+  overflow-anchor: none;
+  -webkit-font-smoothing: antialiased;
+  background-color: var(--footer-bg);
+}
+
+.container {
+  max-width: 1440px;
+  margin: 0 auto;
+  padding-left:72px;
+  padding-right: 72px;
+  z-index: 2;
+  @media(max-width: $tablet){
+    padding-left:12px;
+    padding-right: 12px;
+  }
+  @media(min-width: $laptop) {
+    padding-left:size-decstop(72);
+    padding-right:size-decstop(72);
+    max-width: size-decstop(1440);
+  }
+}
+
+.container-middle {
+  max-width: 964px;
+  margin: 0 auto;
+  @media(max-width: $tablet-landscape){
+    padding: 0 12px;
+  }
+  @media(min-width: $laptop) {
+    max-width:size-decstop(964);
+  }
+}
+
+.container-small {
+  max-width: 632px;
+  margin: 0 auto;
+  @media(max-width: $tablet){
+    padding: 0 12px;
+  }
+  @media(min-width: $laptop) {
+    max-width:size-decstop(632);
+  }
+}
+
+
+a,
+button,
+label {
+  -webkit-tap-highlight-color: transparent;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+  outline: none;
+
+  &[href^="tel:"] {
+    white-space: nowrap;
+  }
+}
+
+img {
+  display: block;
+  max-width: 100%;
+  width: 100%;
+  height: 100%;
+}
+
+textarea {
+  resize: none;
+}
+
+input,
+textarea {
+  appearance: none;
+  /* stylelint-disable property-no-vendor-prefix */
+  -webkit-appearance: none;
+  /* stylelint-enable */
+  font-family: inherit;
+  border: none;
+  border-radius: 0;
+
+  &:focus {
+    outline: none;
+  }
+
+  &:invalid {
+    box-shadow: none;
+  }
+
+  &::-ms-clear {
+    display: none;
+  }
+
+  /* stylelint-enable */
+  &[type="search"]::-webkit-search-decoration,
+  &[type="search"]::-webkit-search-cancel-button,
+  &[type="search"]::-webkit-search-results-button,
+  &[type="search"]::-webkit-search-results-decoration {
+    /* stylelint-disable property-no-vendor-prefix */
+    -webkit-appearance: none;
+    /* stylelint-enable */
+  }
+}
+
+picture {
+  width: 100%;
+  display: block;
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 100%;
+}
+
+iframe {
+  border-style: none;
+}
+
+ul li {
+  list-style: none;
+}
+.no-scroll {
+  overflow: hidden !important;
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  left: 0;
+  right: 0;
+}
+
+
+

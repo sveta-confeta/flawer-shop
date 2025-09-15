@@ -1,0 +1,92 @@
+<template>
+  <div class="news-page">
+    <promo-news v-if="currentCase" :news-data="currentCase"/>
+    <app-content
+        :titleH2="titleH2"
+        :titleH3="titleH3"
+        :textSection1="textSection1"
+        :textSection2="textSection2"
+        :importantText="importantText"
+        :quoteTitle="quoteTitle"
+        :quoteText="quoteText"
+        :textSection3="textSection3"
+        :textSection4="textSection4"/>
+    <app-video :title="titleVideo" :src="srcVideo"/>
+    <mark-list :title="titleMarkList" :items="itemsMarkList"/>
+    <number-list :title="titleNumberList" :items="itemsNumberList"/>
+    <table-item/>
+  </div>
+</template>
+
+<script setup lang="ts">
+import {computed, ref} from "vue";
+import { useRoute } from 'vue-router'
+import PromoNews from "../../components/organisms/PomoNews/PromoNews.vue";
+import AppContent from "../../components/organisms/AppContent/AppContent.vue";
+import MarkList from "../../components/molecules/MarkList/MarkList.vue";
+import NumberList from "../../components/molecules/NumberList/NumberList.vue";
+import AppVideo from "../../components/molecules/AppVideo/AppVideo.vue";
+import TableItem from "../../components/molecules/TableItem/TableItem.vue";
+import {useCaseCardsStore} from "../../stores/newsCards";
+
+const route = useRoute()
+const store = useCaseCardsStore()
+const currentCase = computed(() => store.getCardById(route.params.id as string))
+
+const titleH2 = "Heading H2";
+const titleH3 = "Heading H3";
+const textSection1 = "Off-Grid is here not just to showcase talent and top-notch work, we're all about amplifying it. By spotlighting with us, you’re opening doors to a global stage where your hard work can shine its brightest.  It's all about giving your passion the platform it deserves.";
+const textSection2 = "Our platform offers daily exposure, meaning more eyes on your work and stronger brand presence. But that's not all; you also get the golden opportunity to connect with the industry's finest creatives. Through tailored links, you have the power to drive and monitor your post's traffic";
+const importantText = 'Pouring dedication and passion into your work';
+const quoteTitle = 'Recognizing this, we\'re proud to present Off-Grid Spotlight, our latest addition, designed exclusively for devoted creatives such as yourself.';
+const quoteText = 'Author name';
+const textSection3 = "Wanna flex those creative muscles? Promote your portfolio, showcase your expertise, and attract those dream clients.";
+const textSection4 = 'With Off-Grid Spotlight, not only do you gain unparalleled exposure, but you also benefit from our swift process. After purchasing your spotlight, expect to see it go live in the very same week. We\'re here to help you showcase your passion promptly and effectively.Ready to light up the creative world with Off-Grid Spotlight? We\'re excited to showcase you!';
+const titleVideo = "Video";
+const srcVideo = "https://www.youtube.com/embed/p4S87A2TNPQ?si=mNsRanYHIavjKG9h";
+
+const titleMarkList = ref("Mark list");
+const itemsMarkList = ref([
+  {
+    title: "Boost Your Spotlight with Add-ons",
+    text: "Wanna flex those creative muscles? Promote your portfolio, showcase your expertise, and attract those dream clients"
+  },
+  {
+    title: "Product or Service",
+    text: "Hosting a cool event? Get the word out through our channels and watch those tickets fly off the shelf."
+  },
+  {
+    title: "Events & Gatherings",
+    text: "Hunting for a designer, artist or anything in between? Our community is brimming with talent. Attract the crème de la crème for your projects."
+  },
+]);
+
+const titleNumberList = ref("Number list");
+const itemsNumberList = ref([
+  {text: "Events & Gatherings"},
+  {text: "Projects"},
+  {text: "Job Posting"},
+])
+
+</script>
+
+<style lang="scss">
+
+@import "../../assets/scss/breakpoints.scss";
+@import "../../assets/scss/scale.scss";
+
+.news-page {
+  background: var(--bg);
+  padding-bottom: 105px;
+  border-radius: 0 0 50px 50px;
+  @media (max-width: $tablet) {
+    border-radius: 0 0 16px 16px;
+    padding-bottom: 64px;
+  }
+  @media(min-width: $laptop) {
+    border-bottom-left-radius: size-decstop(50);
+    border-bottom-right-radius: size-decstop(50);
+    padding-bottom: size-decstop(105);
+  }
+}
+</style>

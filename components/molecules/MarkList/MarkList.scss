@@ -1,0 +1,81 @@
+
+.mark-list {
+  margin-bottom: 64px;
+  @media(max-width: $tablet) {
+    margin-bottom: 48px;
+  }
+  @media(min-width: $laptop) {
+    margin-bottom: size-decstop(64);
+  }
+  &__title {
+    margin-bottom: 32px;
+    display: block;
+    font-size: 32px;
+    font-weight: 700;
+    line-height: 38px;
+    color: var(--title);
+    @media(max-width: $tablet) {
+      font-size: 26px;
+      line-height: 31px;
+      margin-bottom: 24px;
+    }
+    @media(min-width: $laptop) {
+      margin-bottom: size-decstop(32);
+      font-size: size-decstop(32);
+      line-height: size-decstop(38);
+    }
+  }
+  &__list {
+    padding-left: 12px;
+    @media(min-width: $laptop) {
+      padding-left:size-decstop(12);
+    }
+    &-item {
+      margin-bottom: 16px;
+      display: flex;
+      gap: 24px;
+      @media(min-width: $laptop) {
+        margin-bottom: size-decstop(16);
+        gap: size-decstop(24);
+      }
+      &-point {
+        min-width: 8px;
+        height: 8px;
+        border-radius: 50%;
+        background: var(--header-menu-text);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-top: 9px;
+        @media(min-width: $laptop) {
+          min-width:size-decstop(8);
+          height:size-decstop(8);
+          margin-top:size-decstop(9);
+        }
+      }
+      &-title {
+        font-size: 20px;
+        font-weight: 700;
+        line-height: 28px;
+        color: var(--header-menu-text);
+        display: block;
+        margin-bottom: 5px;
+        @media(min-width: $laptop) {
+          font-size: size-decstop(20);
+          line-height: size-decstop(28);
+          margin-bottom: size-decstop(5);
+        }
+      }
+      &-text {
+        font-size: 20px;
+        font-weight: 400;
+        line-height: 28px;
+        color: var(--header-menu-text);
+        @media(min-width: $laptop) {
+          font-size: size-decstop(20);
+          line-height: size-decstop(28);
+        }
+      }
+    }
+  }
+}

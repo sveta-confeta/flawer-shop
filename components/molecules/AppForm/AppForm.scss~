@@ -1,0 +1,138 @@
+
+.form {
+  width: 100%;
+  overflow-y: auto;
+
+  .form-input {
+    border-radius: 16px;
+    height: 64px;
+    padding: 20px 24px;
+    background: var(--bg);
+    width: 100%;
+    color:var(--card-text) !important;
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 24px;
+    border:1px solid var(--bg-elements);
+    @media(min-width: 2000px) {
+    border-radius:size-modal(16);
+      line-height: size-modal(24);
+      font-size: size-modal(20);
+      height:size-modal(64);
+      padding-top:size-modal(20);
+      padding-bottom:size-modal(20);
+      padding-left:size-modal(24);
+      padding-right:size-modal(24);
+    }
+    &:active,
+    &:focus {
+      border:2px solid var(--primary);
+    }
+    &:-webkit-autofill,
+    &:-webkit-autofill:hover,
+    &:-webkit-autofill:focus,
+    &:-webkit-autofill:active  {
+      -webkit-box-shadow: 0 0 0 1000px var(--bg) inset;
+    }
+  }
+
+  input:-webkit-autofill {
+    -webkit-text-fill-color: var(--card-text) !important;
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 24px;
+  }
+  input::placeholder {
+    color:var(--text);
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 24px;
+    @media(min-width: 2000px) {
+      line-height: size-modal(24);
+      font-size: size-modal(20);
+
+    }
+  };
+  .form-group {
+    position: relative;
+    img {
+      position: absolute;
+      pointer-events: none;
+      width: 20px;
+      height: 24px;
+      top: 20px;
+      right: 24px;
+      @media(min-width: 2000px) {
+        width: size-modal(20);
+        height: size-modal(24);
+        top: size-modal(20);
+        right:size-modal(24);
+      }
+    }
+  }
+  label {
+    visibility: hidden;
+    font-size: 0;
+    position: absolute;
+    opacity: 0;
+  }
+
+  &-group {
+    width: 100%;
+    position: relative;
+    margin-bottom: 32px;
+    @media(max-width: 1100px) {
+      margin-bottom: 24px;
+    }
+    @media(min-width: 2000px) {
+      margin-bottom: size-modal(32);
+    }
+  }
+
+  .textarea {
+    border-radius: 16px;
+    background: var(--bg);
+    width: 100%;
+    min-height: 164px;
+    border:1px solid var(--bg-elements);
+    padding: 20px 24px;
+    color:var(--card-text);
+    font-weight: 400;
+    font-size: 20px;
+    @media(min-width: 2000px) {
+      border-radius:size-modal(16);
+      line-height: size-modal(24);
+      font-size: size-modal(20);
+      min-height:size-modal(164);
+      padding-top:size-modal(20);
+      padding-bottom:size-modal(20);
+      padding-left:size-modal(24);
+      padding-right:size-modal(24);
+    }
+  }
+ &-btn {
+   width: 100%;
+   margin-top: 50px;
+   @media(max-width: 1100px) {
+     margin-top: 40px;
+   }
+   @media(min-width: 2000px) {
+     margin-top:size-modal(50);
+   }
+ }
+  .form-btn[disabled] {
+    opacity: 0.5;
+    cursor: not-allowed;
+  }
+  .form-input.invalid {
+    border-color: var(--error);
+  }
+
+  .form-error {
+    color: var(--error);
+    font-size: 16px;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+  }
+}

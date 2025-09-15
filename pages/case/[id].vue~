@@ -1,0 +1,142 @@
+<template>
+  <div class="case-page">
+    <promo-case v-if="currentCase" :case-data="currentCase"/>
+    <div class="case-quote-text">
+      <quote-text :title="quoteTitle" :text="quoteText" quoteClass="quote-case-class"/>
+    </div>
+    <div class="case-challenges-results">
+      <challenges-results/>
+    </div>
+    <app-content
+        :titleH2="titleH2"
+        :titleH3="titleH3"
+        :textSection1="textSection1"
+        :textSection2="textSection2"
+        :importantText="importantText"
+        :quoteTitle="quoteTitle"
+        :quoteText="quoteText"
+        :textSection3="textSection3"
+        :textSection4="textSection4"/>
+    <app-video :title="titleVideo" :src="srcVideo"/>
+    <mark-list :title="titleMarkList" :items="itemsMarkList"/>
+    <number-list :title="titleNumberList" :items="itemsNumberList"/>
+    <table-item/>
+  </div>
+</template>
+
+<script setup lang="ts">
+import { ref, computed } from 'vue'
+import { useRoute } from 'vue-router'
+
+import PromoCase from "../../components/organisms/PomoCase/PromoCase.vue";
+import AppContent from "../../components/organisms/AppContent/AppContent.vue";
+import MarkList from "../../components/molecules/MarkList/MarkList.vue";
+import NumberList from "../../components/molecules/NumberList/NumberList.vue";
+import AppVideo from "../../components/molecules/AppVideo/AppVideo.vue";
+ import TableItem from "../../components/molecules/TableItem/TableItem.vue";
+import QuoteText from "../../components/molecules/QuoteText/QuoteText.vue";
+import ChallengesResults from "../../components/molecules/ChallengesResults/ChallengesResults.vue";
+import {useCaseCardsStore} from "../../stores/caseCards";
+
+const route = useRoute()
+const store = useCaseCardsStore()
+
+const currentCase = computed(() => store.getCardById(route.params.id as string))
+
+const titleH2 = "Heading H2";
+const titleH3 = "Heading H3";
+const textSection1 = "Off-Grid is here not just to showcase talent and top-notch work, we're all about amplifying it. By spotlighting with us, you’re opening doors to a global stage where your hard work can shine its brightest.  It's all about giving your passion the platform it deserves.";
+const textSection2 = "Our platform gives your flowers daily exposure, ensuring they captivate a wider audience and enhance their natural beauty. But that's not all—you’ll also get the chance to connect with top florists and gardeners. With custom tracking links, you can direct and monitor engagement with your floral creations.";
+const importantText = 'Pouring dedication and passion into your work';
+const quoteTitle = '“Flowers are the beautiful hieroglyphics of nature with which she indicates how much she loves us.”';
+const quoteText = '— Johann Wolfgang von Goethe';
+const textSection3 = "Our platform gives your flowers daily exposure, ensuring they captivate a wider audience and enhance their natural beauty. But that's not all—you’ll also get the chance to connect with top florists and gardeners. With custom tracking links, you can direct and monitor engagement with your floral creations.";
+const textSection4 = 'Our platform gives your flowers daily exposure, ensuring they captivate a wider audience and enhance their natural beauty. But that\'s not all—you’ll also get the chance to connect with top florists and gardeners. With custom tracking links, you can direct and monitor engagement with your floral creations.';
+const titleVideo = "Video";
+const srcVideo = "https://www.youtube.com/embed/sfZykfxdSGo?autoplay=1&mute=1";
+
+
+const titleMarkList = ref("Mark list");
+const itemsMarkList = ref([
+  {
+    title: "Boost Your Spotlight with Add-ons",
+    text: "Wanna flex those creative muscles? Promote your portfolio, showcase your expertise, and attract those dream clients"
+  },
+  {
+    title: "Product or Service",
+    text: "Hosting a cool event? Get the word out through our channels and watch those tickets fly off the shelf."
+  },
+  {
+    title: "Events & Gatherings",
+    text: "Hunting for a designer, artist or anything in between? Our community is brimming with talent. Attract the crème de la crème for your projects."
+  },
+]);
+
+const titleNumberList = ref("Number list");
+const itemsNumberList = ref([
+  {text: "Events & Gatherings"},
+  {text: "Projects"},
+  {text: "Job Posting"},
+]);
+
+</script>
+
+<style lang="scss">
+
+@import "../../assets/scss/breakpoints";
+@import "../../assets/scss/scale";
+
+.case-quote-text {
+  display: grid;
+  grid-template-columns: 3fr 1fr;
+  @media(max-width: $tablet) {
+    grid-template-columns:1fr;
+  }
+}
+
+.quote.quote-case-class {
+  padding: 72px;
+  border-radius: 72px;
+  margin-bottom: 0;
+  gap: 72px;
+  @media(max-width: $tablet-landscape) {
+    padding: 50px;
+    gap: 50px;
+    margin-top: ;
+  }
+  @media(min-width: $laptop) {
+    padding: size-decstop(72);
+    border-radius: size-decstop(72);
+    gap: size-decstop(72);
+  }
+  @media(max-width: $tablet) {
+    padding: 32px 12px;
+    border-radius: 16px;
+    gap: 32px;
+    flex-direction: column;
+  }
+}
+
+.case-challenges-results {
+  display: grid;
+  grid-template-columns: 1fr 3fr;
+  @media(max-width: $tablet) {
+    grid-template-columns:1fr;
+  }
+}
+
+.case-page {
+  background: var(--bg);
+  border-radius: 0 0 50px 50px;
+  padding-bottom: 70px;
+  @media (max-width: $tablet) {
+    border-radius: 0 0 16px 16px;
+    padding-bottom: 5px;
+  }
+  @media(min-width: $laptop) {
+    border-bottom-left-radius: size-decstop(50);
+    border-bottom-right-radius: size-decstop(50);
+    padding-bottom: size-decstop(70);
+  }
+}
+</style>
