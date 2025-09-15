@@ -6,8 +6,7 @@
     "dev": "nuxt dev",
     "build": "nuxt build",
     "start": "nuxt start",
-    "generate": "nuxt generate",
-    "deploy": "nuxi generate && gh-pages -d .output/public"
+    "generate": "nuxt generate"
   },
   "dependencies": {
     "@nuxtjs/i18n": "^9.4.0",

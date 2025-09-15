@@ -27,6 +27,7 @@ export default defineNuxtConfig ({
 
     nitro: {
         compressPublicAssets: true,
+        preset: 'github-pages'
     },
     app: {
         head: {
@@ -51,7 +52,8 @@ export default defineNuxtConfig ({
                     content: 'start flower business, open a flower shop, florist business plan, flower shop startup costs, how to become a florist, floral design business, sourcing flowers, florist marketing ideas, flower shop license, profitable flower business'
                 }
             ],
-        }
+        },
+        baseURL: '/sveta-confeta/',
     },
     i18n: {
         strategy: 'no_prefix',
