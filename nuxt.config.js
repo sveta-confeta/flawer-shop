@@ -55,6 +55,11 @@ export default defineNuxtConfig ({
         },
         baseURL: '/sveta-confeta/',
     },
+    runtimeConfig: {
+        public: {
+            baseURL: process.env.NODE_ENV === 'production' ? '/sveta-confeta/' : '/'
+        },
+    },
     i18n: {
         strategy: 'no_prefix',
         defaultLocale: "ru",

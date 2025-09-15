@@ -1,6 +1,6 @@
 <template>
   <div class="promo">
-    <img src="/images/promo-bg.webp" alt="background image" class="promo-picture" />
+    <img :src="`${$config.app.baseURL}images/promo-bg.webp`" alt="background image" class="promo-picture" />
     <div class="promo__context container">
       <h2 class="promo__context-text">{{ t('promo.experts', 'Professional experts') }}</h2>
       <div class="promo__context-title-wrap">
